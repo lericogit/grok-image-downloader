@@ -1,6 +1,6 @@
-# Grok Live Image Downloader
+# Grok Image Downloader
 
-A specialized Chrome Extension designed to capture and download dynamically generated AI images. It solves the problem of "blurry" intermediate generation steps by allowing users to download the final high-resolution state of an image with one click.
+A specialized Chromium Extension designed to capture and download dynamically generated AI images. It solves the problem of "blurry" intermediate generation steps by allowing users to download the final high-resolution state of an image with one click.
 
 ## ✨ Features
 
@@ -8,10 +8,11 @@ A specialized Chrome Extension designed to capture and download dynamically gene
 - **Dual Handling:** - Converts **Base64 data** to your preferred quality.
   - Detects **Direct URLs** (CDN links) for instant, lossless saving.
 - **Quality Control:** Choose between PNG (Lossless) or JPEG with 4 industry-standard presets:
-  - **Maximum (100%)**
+  - **Lossless Approximation (100%)**
   - **Highest (95%)**
   - **Very High (90%)**
   - **High (80%)**
+  - **Medium (75%)**
 - **Custom Slider:** Fine-tune JPEG quality from 0-100% with a built-in artifact warning system.
 - **OS Integration:** Elegant UI with native Dark/Light mode support.
 
