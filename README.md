@@ -1,6 +1,6 @@
 # Grok Image Downloader
 
-A specialized Chromium Extension designed to capture and download dynamically generated AI images. It solves the problem of "blurry" intermediate generation steps by allowing users to download the final high-resolution state of an image with one click.
+A Chromium Extension that adds instant download buttons to the Grok image grid. Skip the tedious process of opening every image individually just to save it—download your generations directly from the main view.
 
 ## ✨ Features
 
