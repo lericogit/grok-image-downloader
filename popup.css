@@ -1,0 +1,126 @@
+/* Base Styles for Dark Mode (Default) */
+:root {
+    --bg-color: #1e1e1e;
+    --text-color: #f0f0f0;
+    --border-color: #383838;
+    --input-bg: #2a2a2a;
+    --highlight-color: #4CAF50;
+    /* Green highlight */
+}
+
+/* Light Mode Override (if OS preference is light) */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --border-color: #ccc;
+        --input-bg: #f5f5f5;
+        --highlight-color: #007bff;
+        /* Blue highlight */
+    }
+
+    .warning {
+        color: #d32f2f;
+        /* Darker red */
+        background-color: rgba(211, 47, 47, 0.1);
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 15px;
+    width: 250px;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.1em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.setting-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 5px 0;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+select,
+input[type="range"] {
+    padding: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-shadow: none;
+    outline: none;
+}
+
+select {
+    appearance: none;
+    /* Remove default dropdown arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23${encodeURIComponent(getComputedStyle(document.documentElement).getPropertyValue(' --text-color').replace(' #', ' '))}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px top 50%;
+    background-size: 14px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 6px;
+}
+
+/* Custom styling for the range slider track and thumb */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: var(--border-color);
+    border-radius: 3px;
+    height: 6px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: -5px;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: var(--highlight-color);
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+    display: none;
+}
+
+.status {
+    text-align: center;
+    font-size: 0.8em;
+    color: var(--highlight-color);
+    visibility: hidden;
+}
+
+/* Styles for the warning message */
+.warning {
+    font-size: 0.8em;
+    color: #f44336;
+    /* Red color */
+    background-color: rgba(244, 67, 54, 0.1);
+    padding: 8px;
+    border-radius: 4px;
+    margin-top: 5px;
+}

@@ -1,0 +1,50 @@
+{
+    "manifest_version": 3,
+    "name": "Grok Image Downloader",
+    "version": "1.0",
+    "description": "Adds download buttons to base64 images",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "declarativeNetRequest"
+    ],
+    "host_permissions": [
+        "https://grok.com/*",
+        "http://grok.com/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon16.png",
+            "32": "icon32.png",
+            "48": "icon48.png",
+            "64": "icon64.png",
+            "128": "icon128.png",
+            "256": "icon256.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://grok.com/*",
+                "http://grok.com/*"
+            ],
+            "css": [
+                "styles.css"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "icons": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "64": "icon64.png",
+        "128": "icon128.png",
+        "256": "icon256.png"
+    }
+}

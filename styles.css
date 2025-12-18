@@ -1,0 +1,45 @@
+/* Container for the button to ensure it sits on top */
+.ext-dl-btn-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+}
+
+.ext-dl-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    
+    /* Glassy Effect */
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px; /* Soft square */
+    color: white;
+    
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0; /* Hidden by default */
+}
+
+/* Hover effects */
+.ext-dl-btn:hover {
+    background-color: rgba(0, 0, 0, 0.85);
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Icon */
+.ext-dl-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Show button when hovering the main list item */
+div[role="listitem"]:hover .ext-dl-btn,
+.ext-dl-btn:focus {
+    opacity: 1;
+}

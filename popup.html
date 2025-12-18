@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Download Settings</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="title">Downloader Settings</h3>
+
+        <div class="setting-group">
+            <label for="format-select">Format:</label>
+            <select id="format-select">
+                <option value="png">PNG (Lossless)</option>
+                <option value="jpeg">JPEG (Lossy)</option>
+            </select>
+        </div>
+
+        <div id="quality-settings" class="setting-group hidden">
+            <label>JPEG Quality Presets:</label>
+            <select id="quality-preset-select">
+                <option value="custom" disabled>— Custom —</option>
+                <option value="1.0">Lossless Approximation (100%)</option>
+                <option value="0.95">Highest (95%) — Grok Default</option>
+                <option value="0.90">Very High (90%)</option>
+                <option value="0.80">High (80%)</option>
+                <option value="0.75">Medium (75%)</option>
+            </select>
+
+            <label for="quality-range">Custom Quality: <span id="quality-value">90</span>%</label>
+            <input type="range" id="quality-range" min="0" max="100" value="90">
+
+            <p id="quality-warning" class="warning hidden">
+                ⚠️ Warning: Quality below 75% often results in noticeable compression artifacts.
+            </p>
+
+            <input type="hidden" id="custom-quality-val" value="0.90">
+        </div>
+
+        <p id="save-status" class="status"></p>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
